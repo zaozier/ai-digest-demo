@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI枣报制作流程 - 包含图片展示</title>
+    <style>
+        /* 基础样式 */
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #7c3aed;
+            --success-color: #10b981;
+            --light-color: #f8fafc;
+            --dark-color: #1e293b;
+            --border-radius: 8px;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--dark-color);
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* 头部样式 */
+        header {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 30px;
+            margin-bottom: 20px;
+            box-shadow: var(--shadow);
+            text-align: center;
+        }
+
+        h1 {
+            color: var(--primary-color);
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            color: #64748b;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+        }
+
+        /* 图片展示区 */
+        .image-section {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: var(--shadow);
+        }
+
+        .image-container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .uploaded-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: var(--border-radius);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            margin-bottom: 15px;
+            border: 3px solid var(--light-color);
+        }
+
+        .image-info {
+            background: var(--light-color);
+            padding: 15px;
+            border-radius: var(--border-radius);
+            margin-top: 15px;
+            text-align: left;
+        }
+
+        /* 内容区域 */
+        .content-section {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: var(--shadow);
+        }
+
+        h2 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--light-color);
+        }
+
+        h3 {
+            color: var(--secondary-color);
+            margin: 20px 0 10px;
+        }
+
+        ul, ol {
+            padding-left: 25px;
+            margin: 15px 0;
+        }
+
+        li {
+            margin-bottom: 8px;
+            padding-left: 5px;
+        }
+
+        /* 卡片样式 */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .card {
+            background: var(--light-color);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            border-top: 4px solid var(--primary-color);
+        }
+
+        .card-title {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            
+            header, .image-section, .content-section {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* 打印样式 */
+        @media print {
+            body {
+                background: white;
+            }
+            
+            .image-section, .content-section {
+                box-shadow: none;
+                border: 1px solid #ddd;
+                page-break-inside: avoid;
+            }
+        }
+
+        /* 动画 */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .image-section, .content-section {
+            animation: fadeIn 0.6s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>AI枣报制作流程展示</h1>
+            <p class="subtitle">包含用户上传图片的完整展示页面</p>
+            <p>Netlify部署版本 | 可分享链接</p>
+        </header>
+
+        <section class="image-section">
+            <h2>📸 用户上传图片</h2>
+            <div class="image-container">
+                <!-- 这里将嵌入用户上传的图片 -->
+                <img src="uploaded_image.jpg" alt="用户上传的AI枣报相关图片" class="uploaded-image">
+                
+                <div class="image-info">
+                    <h3>图片信息</h3>
+                    <ul>
+                        <li><strong>文件名</strong>: uploaded_image.jpg</li>
+                        <li><strong>上传时间</strong>: 2026年4月7日 00:14</li>
+                        <li><strong>图片尺寸</strong>: 1080 × 2336 像素</li>
+                        <li><strong>文件大小</strong>: 约283KB</li>
+                        <li><strong>格式</strong>: JPEG图像</li>
+                    </ul>
+                    <p><em>注：此图片由用户上传，可能与AI枣报制作流程相关</em></p>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>📋 AI枣报制作流程概述</h2>
+            
+            <h3>核心设计原则</h3>
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-title">精准筛选</div>
+                    <p>只呈现"全球最前沿、最重大、最重要"的AI动态，过滤噪音信息</p>
+                </div>
+                <div class="card">
+                    <div class="card-title">质量优先</div>
+                    <p>建立严格的质量门禁，确保每条信息都有价值、可验证</p>
+                </div>
+                <div class="card">
+                    <div class="card-title">时间效率</div>
+                    <p>让用户在3分钟内看懂当天真正值得关注的变化</p>
+                </div>
+            </div>
+
+            <h3>完整生产链路 (08:50-09:00)</h3>
+            <ol>
+                <li><strong>08:50</strong>: 数据源可用性检查 + 代理自愈</li>
+                <li><strong>08:55</strong>: 高质量候选筛选 + 公司分型策略</li>
+                <li><strong>08:55-08:58</strong>: 内容增强阶段（L1-L3分层）</li>
+                <li><strong>08:58</strong>: 内容完成点 + 质量门禁验证</li>
+                <li><strong>09:00</strong>: 确定性发送 + 格式校验</li>
+            </ol>
+
+            <h3>技术创新亮点</h3>
+            <ul>
+                <li><strong>工程门禁体系</strong>: 阶段化质量验证</li>
+                <li><strong>多源验证与降级</strong>: 主备切换 + 源健康监控</li>
+                <li><strong>自动化与确定性平衡</strong>: 智能筛选 + 确定性发送</li>
+                <li><strong>智能去重</strong>: 跨区块协调，避免重复展示</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>🚀 Netlify部署信息</h2>
+            
+            <h3>部署特点</h3>
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-title">全球CDN加速</div>
+                    <p>通过Netlify的全球内容分发网络，确保快速访问</p>
+                </div>
+                <div class="card">
+                    <div class="card-title">自动SSL证书</div>
+                    <p>自动配置HTTPS加密，保障访问安全</p>
+                </div>
+                <div class="card">
+                    <div class="card-title">持续部署</div>
+                    <p>支持自动更新，内容变更时可快速重新部署</p>
+                </div>
+            </div>
+
+            <h3>分享链接格式</h3>
+            <p>部署完成后，你将获得一个类似以下的链接：</p>
+            <div style="background: var(--light-color); padding: 15px; border-radius: var(--border-radius); margin: 15px 0;">
+                <code style="font-size: 1.1rem; color: var(--primary-color);">
+                    https://ai-digest-with-image.netlify.app
+                </code>
+            </div>
+
+            <h3>访问说明</h3>
+            <ul>
+                <li>此链接可以分享给任何人访问</li>
+                <li>支持所有现代浏览器（Chrome、Safari、Firefox等）</li>
+                <li>完美适配桌面和移动设备</li>
+                <li>无需登录或注册即可查看</li>
+            </ul>
+        </section>
+
+        <footer style="text-align: center; margin-top: 30px; padding: 20px; color: #64748b; font-size: 0.9rem;">
+            <p>© 2026 AI枣报产品团队 | Netlify部署版本</p>
+            <p>最后更新: 2026年4月7日 | 页面包含用户上传图片</p>
+        </footer>
+    </div>
+
+    <script>
+        // 图片加载状态提示
+        document.addEventListener('DOMContentLoaded', function() {
+            const img = document.querySelector('.uploaded-image');
+            
+            img.onload = function() {
+                console.log('图片加载成功');
+            };
+            
+            img.onerror = function() {
+                console.log('图片加载失败，显示备用信息');
+                this.alt = '图片加载失败，请检查网络连接';
+                this.style.border = '2px dashed #ef4444';
+            };
+            
+            // 添加图片点击放大功能
+            img.addEventListener('click', function() {
+                const overlay = document.createElement('div');
+                overlay.style.cssText = `
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: rgba(0,0,0,0.9);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    z-index: 1000;
+                    cursor: zoom-out;
+                `;
+                
+                const enlargedImg = document.createElement('img');
+                enlargedImg.src = this.src;
+                enlargedImg.style.cssText = `
+                    max-width: 90%;
+                    max-height: 90%;
+                    border-radius: 8px;
+                    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+                `;
+                
+                overlay.appendChild(enlargedImg);
+                document.body.appendChild(overlay);
+                
+                overlay.addEventListener('click', function() {
+                    document.body.removeChild(overlay);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
